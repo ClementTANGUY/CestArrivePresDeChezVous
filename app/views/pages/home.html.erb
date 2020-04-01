@@ -1,7 +1,24 @@
-<div id="top" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url "wrapper-1.jpg" %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url "wrapper-2.jpg" %>');">
   <div class="container">
     <h1><strong>C'est Arrivé Près de Chez Vous</strong></h1>
+    <p></p>
     <p>Cartographie des grandes affaires criminelles</p>
+
+
+      <div class="container search">
+        <div class="search-transparent">
+        <%= form_tag root_path, method: :get, class: "row" do %>
+          <div class="search-body">
+            <%= text_field_tag :location, params[:location], id:"user_input_autocomplete_address", class: "form-control", placeholder: "Adresse, Ville, Code Postal"%>
+          </div>
+          <div class="search-button">
+            <%= submit_tag "Go !", class: "btn-flat" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+
+
   </div>
 </div>
 

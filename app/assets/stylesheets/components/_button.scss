@@ -12,3 +12,16 @@
   text-decoration: none;
   color: white;
 }
+
+.btn-flat {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #616668;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: black;
+  color: white;
+}

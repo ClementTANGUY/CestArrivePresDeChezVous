@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.search{
+  padding: 0px 50px;
+  font-size: 20px;
+  font-weight: lighter;
+  color: black;
+  opacity: 0.75;
+  align-items: center;
+  height: 200px;
+}
+.search-transparent {
+  background: none;
+}
+.search-body {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  background: rgba(46, 51, 56, 0.3)!important;
+}
+.search-button {
+  display: flex;
+  align-items: center;
+  background: rgba(46, 51, 56, 0.3)!important;
+}

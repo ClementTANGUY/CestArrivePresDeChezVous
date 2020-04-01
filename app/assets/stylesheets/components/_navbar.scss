@@ -31,11 +31,23 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
+  color: black;
+  opacity: 0.50;
 }
 .navbar-wagon-link:hover {
-  color: #5FCC80;
-  text-decoration: none;
+  opacity: 1;
+  text-decoration: none !important;
+}
+
+/* Navbar switch */
+
+.navbar-wagon-switch {
+  color: rgba(0,0,0,0.45);
+  flex: 0 1 auto;
+  cursor: pointer;
+  padding: 0 7px;
+  margin: 0 7px;
+  text-decoration: none !important;
 }
 
 /* Navbar right button */
@@ -54,4 +66,3 @@
   background: #f2542d;
   border-color: #f2542d;
 }
-
