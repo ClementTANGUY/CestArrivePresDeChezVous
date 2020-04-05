@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>C'EST ARRIVÉ PRÈS DE CHEZ VOUS</title>
+    <title>C'est arrivé près de chez Vous</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -12,9 +12,19 @@
   </head>
   <body>
     <%= render "shared/navbar" %>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
     <%= render "shared/footer" %>
+
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=#{ENV['GOOGLE_SERVER_API_KEY']}&libraries=places" %>
+    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag 'application' %>
+
+    <%= yield(:after_js) %>
+
   </body>
 </html>

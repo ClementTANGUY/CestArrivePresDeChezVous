@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   get "/about" => "pages#about"
   get "/lexicon" => "pages#lexicon"
 
-  resources :products
+  resources :cases
 
 end

@@ -7,6 +7,8 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '6.0.2.1'
 gem 'redis'
+gem 'figaro'
+gem "coffee-rails"
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
@@ -14,6 +16,10 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+gem "jquery-rails"
+gem "geocoder"
+gem "gmaps4rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -26,4 +32,8 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+end
+
+source "https://rails-assets.org" do
+  gem "rails-assets-underscore"
 end
