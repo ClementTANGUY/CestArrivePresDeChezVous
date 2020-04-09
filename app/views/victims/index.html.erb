@@ -1,0 +1,145 @@
+<div class="row-fluid">
+  <div class="col-xs-12">
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+
+  <script type="text/javascript" async defer>
+    var handler = Gmaps.build('Google', { markers: { maxRandomDistance: 5 } });
+    handler.buildMap({
+        provider: {
+              // pass in other Google Maps API options here
+
+              // The latitude and longitude to center the map (always required)
+              center: new google.maps.LatLng(48.8529680, 2.3499030),
+              // How you would like to style the map.
+              // This is where you would paste any style found on Snazzy Maps.
+              styles: [
+                  {
+                      "featureType": "landscape",
+                      "stylers": [
+                          {
+                              "hue": "#FFBB00"
+                          },
+                          {
+                              "saturation": 43.400000000000006
+                          },
+                          {
+                              "lightness": 37.599999999999994
+                          },
+                          {
+                              "gamma": 1
+                          }
+                      ]
+                  },
+                  {
+                      "featureType": "road.highway",
+                      "stylers": [
+                          {
+                              "hue": "#FFC200"
+                          },
+                          {
+                              "saturation": -61.8
+                          },
+                          {
+                              "lightness": 45.599999999999994
+                          },
+                          {
+                              "gamma": 1
+                          }
+                      ]
+                  },
+                  {
+                      "featureType": "road.arterial",
+                      "stylers": [
+                          {
+                              "hue": "#FF0300"
+                          },
+                          {
+                              "saturation": -100
+                          },
+                          {
+                              "lightness": 51.19999999999999
+                          },
+                          {
+                              "gamma": 1
+                          }
+                      ]
+                  },
+                  {
+                      "featureType": "road.local",
+                      "stylers": [
+                          {
+                              "hue": "#FF0300"
+                          },
+                          {
+                              "saturation": -100
+                          },
+                          {
+                              "lightness": 52
+                          },
+                          {
+                              "gamma": 1
+                          }
+                      ]
+                  },
+                  {
+                      "featureType": "water",
+                      "stylers": [
+                          {
+                              "hue": "#0078FF"
+                          },
+                          {
+                              "saturation": -13.200000000000003
+                          },
+                          {
+                              "lightness": 2.4000000000000057
+                          },
+                          {
+                              "gamma": 1
+                          }
+                      ]
+                  },
+                  {
+                      "featureType": "poi",
+                      "stylers": [
+                          {
+                              "hue": "#00FF6A"
+                          },
+                          {
+                              "saturation": -1.0989010989011234
+                          },
+                          {
+                              "lightness": 11.200000000000017
+                          },
+                          {
+                              "gamma": 1
+                          }
+                      ]
+                  }
+              ]
+            },
+        internal: { id: 'map' }
+      },
+      function(){
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          if (markers.length == 0) {
+            handler.getMap().setZoom(5);
+          } else if (markers.length == 1) {
+            handler.getMap().setZoom(14);
+          }
+        }
+      );
+  </script>
+
+  <!-- Custom JS code to bind to Autocomplete API -->
+
+
+<% end %>
+

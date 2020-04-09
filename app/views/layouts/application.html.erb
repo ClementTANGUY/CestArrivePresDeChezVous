@@ -12,14 +12,15 @@
   </head>
   <body>
     <%= render "shared/navbar" %>
-    <div class="container-fluid">
-      <%= yield %>
-    </div>
+
+    <%= yield %>
+
     <%= render "shared/footer" %>
 
-    <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=#{ENV['GOOGLE_SERVER_API_KEY']}&libraries=places" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyB3f93jB_TmtZXEHSOWz5zTmdypaKIlYK8&libraries=places" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+
 
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag 'application' %>

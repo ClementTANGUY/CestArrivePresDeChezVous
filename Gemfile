@@ -20,6 +20,7 @@ gem 'webpacker'
 gem "jquery-rails"
 gem "geocoder"
 gem "gmaps4rails"
+gem 'country_select'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

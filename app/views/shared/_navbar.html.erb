@@ -10,12 +10,16 @@
 
   <div class="collapse navbar-collapse navbar-wagon-right" id="navbarSupportedContent" >
     <ul class="navbar-nav mr-auto ">
-      <li class="nav-item navbar-wagon-switch">
-        <div class="custom-control custom-switch">
-          <input type="checkbox" class="custom-control-input" id="customSwitch1">
-          <label class="custom-control-label" for="customSwitch1">Cold cases (bientôt)</label>
-        </div>
-      </li>
+
+      <% if controller_name == "victims" && action_name == "index" %>
+        <li class="nav-item navbar-wagon-switch">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">Cold cases (bientôt)</label>
+          </div>
+        </li>
+      <% end %>
+
       <li class="nav-item navbar-wagon-link">
         <%= link_to "Lexique", "", class: "navbar-wagon-item navbar-wagon-link" %>
       </li>

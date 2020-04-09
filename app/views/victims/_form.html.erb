@@ -1,0 +1,32 @@
+<%= simple_form_for (@victim) do |f| %>
+
+  <% if @victim.errors.any? %>
+     <div id="error_explanation">
+      <h2><%= pluralize(@victim.errors.count, "error") %> prohibited this victim from being saved:</h2>
+      <ul>
+        <% @victim.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.input :date, as: :datetime, start_year: Date.today.year - 70, end_year: Date.today.year, order: [:day, :month, :year, :hour, :minute] %>
+    <%= f.input :last_name, label: 'Nom' %>
+    <%= f.input :first_name, label: 'Prénom' %>
+    <%= f.input :age, label: 'Âge' %>
+    <%= f.input :victim_of, label: 'Type de crime' %>
+    <%= f.input :address, label: 'Adresse' %>
+    <%= f.input :zip_code, label: 'Code Postal' %>
+    <%= f.input :city, label: 'Ville' %>
+    <%= f.input :country, label: 'Pays' %>
+  </div>
+
+  <p>&nbsp</p>
+
+  <div class="form-actions">
+    <%= f.button :button, "Créer".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>"}, class: "btn-flat"%>
+  </div>
+
+<% end %>
