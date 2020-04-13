@@ -7,9 +7,8 @@
 </div>
 
 <% content_for(:after_js) do %>
-
   <script type="text/javascript" async defer>
-    var handler = Gmaps.build('Google', { markers: { maxRandomDistance: 5 } });
+    const handler = Gmaps.build('Google', { markers: { maxRandomDistance: 5 } });
     handler.buildMap({
         provider: {
               // pass in other Google Maps API options here
@@ -137,9 +136,6 @@
         }
       );
   </script>
-
-  <!-- Custom JS code to bind to Autocomplete API -->
-
 
 <% end %>
 
