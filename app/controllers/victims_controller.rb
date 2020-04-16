@@ -7,6 +7,7 @@ class VictimsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@victims) do |victim, marker|
       marker.lat victim.latitude
       marker.lng victim.longitude
+      marker.infowindow render_to_string(partial: "/victims/map_box", locals: { victim: victim })
     end
   end
 

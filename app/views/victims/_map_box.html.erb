@@ -1,0 +1,26 @@
+<div class="map_box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+  <div class="map_box-category">
+    <h2>
+      <%= victim.first_name %> <%= victim.last_name.upcase %>
+    </h2>
+    <%= victim.age %> ans
+  </div>
+
+  <div class="map_box-user">
+    <%= image_tag "Logo-2.png", class:"max_box-user avatar-large" %>
+  </div>
+
+  <div class="map_box-description">
+    <h3>
+      <%= victim.victim_of %> <br>
+      <%= victim.date.strftime("%d/%m/%Y") %>
+    </h3>
+    <p>
+      "Affaire du tueur aux poings-nus" <br>
+      (En savoir plus...)
+    </p>
+
+  </div>
+
+  <%= link_to "", "#", class: "map_box-link" %>
+</div>

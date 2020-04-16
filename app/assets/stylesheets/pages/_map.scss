@@ -11,3 +11,52 @@
 #map {
   height: 100%;
  }
+
+ .map_box {
+   height: 175px;
+   width: 325px;
+   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+   background-size: cover !important;
+   color: white;
+   background-color: $white;
+   margin-top: 5px;
+   position: relative;
+ }
+ .map_box-user {
+   position: absolute;
+   right: 10px;
+   top: 10px;
+ }
+ .map_box-category {
+   position: absolute;
+   top: 5px;
+   left: 10px;
+   font-size: 14px;
+   line-height: 20px;
+ }
+ .map_box-category h2 {
+   font-size: 20px;
+ }
+ .map_box-description {
+   position: absolute;
+   bottom: 5px;
+   left: 10px;
+ }
+ .map_box-description h3 {
+   font-size: 16px;
+ }
+ .map_box-description p {
+   font-size: 14px;
+   }
+ .map_box-link {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 100%;
+   z-index:2;
+   background: black;
+   opacity: 0;
+ }
+ .map_box-link:hover{
+   opacity: 0.1;
+ }
